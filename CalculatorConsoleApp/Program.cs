@@ -10,23 +10,57 @@ namespace CalculatorConsoleApp
     {
         static void Main(string[] args)
         {
+            int pilih;
+        menu:
             Console.Title = "Aplikasi Calculator";
 
-            Console.Write("Ïnputkan nomer menu : ");
-            int pilih = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Pilih menu calculator\n\n1. Penambahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian");
+
+            Console.Write("\nInputkan Nomor menu : ");
+            pilih = Convert.ToInt32(Console.ReadLine());
             if (pilih == 1)
             {
-                Console.write("Inputkan nilai a + ");
-                int a = int.Parse(console.ReadLine());
-                Console.WriteLine()
+                Console.Write("Inputkan nilai a : ");
+                int a = int.Parse(Console.ReadLine());
 
+                Console.Write("Inputkan nilai b : ");
+                int b = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Hasil Penambahan " + a + " + " + b + " = " + Penambahan(a, b));
             }
+            else if (pilih == 2)
+            {
+                Console.Write("Inputkan nilai a : ");
+                int a = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Hasil Penambahan" + a + " + " + b + " = " + Penambahan(a, b));
-            Console.WriteLine("Hasil Pengurangan {0} - {1} = {2}", a, b, Pengurangan(a, b));
-            Console.WriteLine("Hasil Perkalian {0} * {1} = {2}", a, b, Perkalian(a, b));
-            Console.WriteLine("Hasil Pembagian {0} / {1} = {2}", a, b, Pembagian(a, b));
+                Console.Write("Inputkan nilai b : ");
+                int b = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Hasil Pengurangan {0} - {1} = {2}", a, b, Pengurangan(a, b));
+            }
+            else if (pilih == 3)
+            {
+                Console.Write("Inputkan nilai a : ");
+                int a = int.Parse(Console.ReadLine());
 
+                Console.Write("Inputkan nilai b : ");
+                int b = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Hasil Perkalian {0} * {1} = {2}", a, b, Perkalian(a, b));
+            }
+            else if (pilih == 4)
+            {
+                Console.Write("Inputkan nilai a : ");
+                int a = int.Parse(Console.ReadLine());
+
+                Console.Write("Inputkan nilai b : ");
+                int b = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Hasil Pembagian {0} / {1} = {2}", a, b, Pembagian(a, b));
+            }
+            else
+            {
+                Console.Write("Pilihan anda tidak tersedia");
+                Console.WriteLine("\nTekan sembarang key untuk keluar");
+                Console.ReadKey();
+                goto menu;
+            }
             Console.WriteLine("\nTekan sembarang key untuk keluar");
             Console.ReadKey();
         }
